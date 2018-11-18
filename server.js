@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-// Set-up Handlebars as the Express Template.
+// Set-up Handlebars as the Template Engine.
 const exphbs = require('express-handlebars');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
