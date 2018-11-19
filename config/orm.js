@@ -10,9 +10,9 @@ const orm = {
         });
     },
 
-    insertOne: function (name, cb) {
+    insertOne: function (burger_name, cb) {
         const query = `INSERT INTO burgers (burger_name) VALUES (?)`;
-        connection.query(query, [name], function(err, result) {
+        connection.query(query, [burger_name], function(err, result) {
             if (err) throw err;
             cb(result)
         });
