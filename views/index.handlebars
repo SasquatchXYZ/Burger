@@ -14,7 +14,7 @@
     </div>
     <div class="col-sm-4">
         <img src="assets/img/burger1.png" class="img-fluid" alt="Hamburger">
-        <div class="card">
+        <div class="card text-center">
             <div class="card-header">Add a Burger</div>
             <div class="card-body">
                 <form>
@@ -24,6 +24,9 @@
                     </div>
                     <button type="button" class="btn btn-success" id="submit-burger">Add Burger</button>
                 </form>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="https://www.youtube.com/watch?v=Z6oeAdemFZw" target="_blank"><---></a>
             </div>
         </div>
     </div>
@@ -46,13 +49,9 @@
         $('.eat-burger').on('click', function (event) {
             const id = $(this).data('id');
             console.log(id);
-            /*const eaten = {
-                devoured: true
-            };*/
 
             $.ajax(`/api/burgers/${id}`, {
                 type: 'PUT',
-                // data: eaten
             }).then(function () {
                 location.reload();
             });

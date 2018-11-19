@@ -7,15 +7,17 @@ const burger = {
             cb(res);
         });
     },
+
     insertOne: function (burger_name, cb) {
         console.log(burger_name);
-        orm.insertOne(burger_name, function(res) {
+        orm.insertOne(burger_name, function (res) {
             cb(res);
         });
     },
-    updateOne: function(id, cb) {
+
+    updateOne: function (id, cb) {
         console.log(id);
-        orm.updateOne(id, function(res) {
+        orm.updateOne(id, function (res) {
             cb(res);
         });
     }
