@@ -26,7 +26,6 @@ router.post('/api/burgers', function(req, res){
 router.put('/api/burgers/:id', function(req, res) {
     const name = `id = ${req.params.id}`;
     console.log('name', name);
-    console.log(req.body.devoured);
 
     burger.updateOne(name, function(result) {
         if (result.changedRows === 0) {
