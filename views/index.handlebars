@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-4" id="un-eaten">
+        {{#each burgers}}
+            {{#unless devoured}}
+                <form class="form-inline">
+                    <p>{{this.name}}</p>
+                    <button type="button" class="btn btn-warning btn-sm" id="{{this.id}}">Eat</button>
+                </form>
+                {{name}}
+            {{/unless}}
+        {{/each}}
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4" id="eaten">
+        {{#each burgers}}
+            {{#if devoured}}
+                <p class="eaten-burger">
+                    {{this.name}}
+                </p>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
