@@ -3,23 +3,73 @@
         {{#each burgers}}
             {{#unless devoured}}
                 <form class="form-inline">
-                    <p>{{this.name}}</p>
-                    <button type="button" class="btn btn-warning btn-sm" id="{{this.id}}">Eat</button>
+                    <p>{{this.burger_name}}</p>
+                    <button type="button" class="btn btn-warning btn-sm" id="eat-burger" data-id="{{this.id}}">Eat</button>
                 </form>
-                {{name}}
             {{/unless}}
         {{/each}}
     </div>
     <div class="col-sm-4">
-
+        <div class="card">
+            <div class="card-header">Add a Burger</div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="add-burger">Burger Name:</label>
+                        <input type="text" class="form-control" id="add-burger">
+                    </div>
+                    <button type="submit" class="btn btn-success" id="submit-burger">Add Burger</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-sm-4" id="eaten">
         {{#each burgers}}
             {{#if devoured}}
                 <p class="eaten-burger">
-                    {{this.name}}
+                    {{this.burger_name}}
                 </p>
             {{/if}}
         {{/each}}
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function(){
+
+        $('#eat-burger').on('click', function(event) {
+            const id = $(this).data('id');
+            console.log(id);
+            const eaten = {
+                devoured: true
+            };
+
+            $.ajax(`/api/burgers/${id}`, {
+                type: 'PUT',
+                data: eaten
+            }).then(function() {
+                console.log('changed devoured to', eaten);
+                location.reload();
+            });
+        });
+
+        $('#submit-burger').on('submit', function(event) {
+            event.preventDefault();
+
+            const newBurger = {
+                burger_name: $('#add-burger').val().trim()
+            };
+
+            console.log(newBurger);
+
+            $.ajax('/api/burgers', {
+                type: 'POST',
+                data: newBurger
+            }).then(function() {
+                console.log('Added New Burger');
+                location.reload()
+            });
+        });
+    });
+
+</script>
