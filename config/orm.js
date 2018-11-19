@@ -18,8 +18,8 @@ const orm = {
         });
     },
     updateOne: function (id, cb) {
-        const query = `UPDATE burgers SET devoured = ? WHERE id = ?`;
-        connection.query(query, [id], function(err, result) {
+        const query = `UPDATE burgers SET devoured = 1 WHERE ${id}`;
+        connection.query(query, function(err, result) {
             if (err) throw err;
             cb(result)
         });

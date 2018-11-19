@@ -4,7 +4,7 @@
             {{#unless devoured}}
                 <form class="form-inline">
                     <p>{{this.burger_name}}</p>
-                    <button type="button" class="btn btn-warning btn-sm" id="eat-burger" data-id="{{this.id}}">Eat</button>
+                    <button type="button" class="btn btn-warning btn-sm eat-burger" data-id="{{this.id}}">Eat</button>
                 </form>
             {{/unless}}
         {{/each}}
@@ -18,7 +18,7 @@
                         <label for="add-burger">Burger Name:</label>
                         <input type="text" class="form-control" id="add-burger">
                     </div>
-                    <button type="submit" class="btn btn-success" id="submit-burger">Add Burger</button>
+                    <button type="button" class="btn btn-success" id="submit-burger">Add Burger</button>
                 </form>
             </div>
         </div>
@@ -37,7 +37,7 @@
 <script type="text/javascript">
     $(function(){
 
-        $('#eat-burger').on('click', function(event) {
+        $('.eat-burger').on('click', function(event) {
             const id = $(this).data('id');
             console.log(id);
             const eaten = {
@@ -53,8 +53,9 @@
             });
         });
 
-        $('#submit-burger').on('submit', function(event) {
-            event.preventDefault();
+        $('#submit-burger').on('click', function(event) {
+
+            console.log('new Burger!');
 
             const newBurger = {
                 burger_name: $('#add-burger').val().trim()

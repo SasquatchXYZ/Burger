@@ -11,13 +11,14 @@ router.get('/', function (req, res) {
         const hbsObject = {
             burgers: data
         };
-        console.log(JSON.stringify(hbsObject, 2, null));
+        console.log(hbsObject);
         res.render('index', hbsObject);
     });
 });
 
 router.post('/api/burgers', function(req, res){
-    burger.insertOne(['burger_name'], [req.body.burger_name], function(result) {
+    console.log(req.body);
+    burger.insertOne([req.body.burger_name], function(result) {
         res.json({id: result.insertId});
     });
 });
@@ -25,10 +26,9 @@ router.post('/api/burgers', function(req, res){
 router.put('/api/burgers/:id', function(req, res) {
     const name = `id = ${req.params.id}`;
     console.log('name', name);
+    console.log(req.body.devoured);
 
-    burger.updateOne({
-        devoured: req.body.devoured
-    }, name, function(result) {
+    burger.updateOne(name, function(result) {
         if (result.changedRows === 0) {
             return res.status(404).end()
         } else {

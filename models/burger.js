@@ -8,11 +8,13 @@ const burger = {
         });
     },
     insertOne: function (burger_name, cb) {
+        console.log(burger_name);
         orm.insertOne(burger_name, function(res) {
             cb(res);
         });
     },
     updateOne: function(id, cb) {
+        console.log(id);
         orm.updateOne(id, function(res) {
             cb(res);
         });
