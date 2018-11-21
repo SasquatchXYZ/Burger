@@ -39,7 +39,7 @@ body-parser (npm install -s body-parser)
 
 ## Running Burger
 
-^ That would be a pretty good band name... Burger is run locally using Node.js, but first you must load the MySQL database, which can be done a number of ways.  The files are inside the 'db' folder, so they can be opened and run in a MySQL GUI to set up the database and seed it if you wish, or you can path into the 'db' folder and run them from the MySQL command line (after loggin in) using:
+^ That would be a pretty good band name... Burger is run locally using Node.js, but first you must load the MySQL database, which can be done a number of ways.  The files are inside the 'db' folder, so they can be opened and run in a MySQL GUI to set up the database and seed it if you wish, or you can path into the 'db' folder and run them from the MySQL command line (after logging in) using:
  
 ```
 source schema.sql
