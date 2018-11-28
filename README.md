@@ -3,6 +3,8 @@
 
 Burger is a web app that revolves around one thing... Eating Burgers.  And then adding more burgers to eat... followed by adding creative burgers to eat, and maybe things that aren't even burgers... But I digress.  It is web application using a MySQL database to store the burgers, Node & Express to run the server and app, with Handlebars as the templating engine to render tasty noms to the HTML.
 
+![Screenshot](public/assets/img/burgerscreenshot.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  See deployment for notes on how to deploy the project on a live system.
@@ -55,6 +57,8 @@ This starts the server which is currently set to run at PORT 8080 (http://localh
 That is really all there is to starting the application running, after that it is then all done in your browser.
 
 ## Deployment
+
+* [Deployed Site](https://.com/)
 
 Notes to come...
 
