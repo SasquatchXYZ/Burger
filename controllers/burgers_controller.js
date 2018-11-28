@@ -11,6 +11,7 @@ const burger = require('../models/burger');
 // GET Route to render all of the burgers from the database into the index.handlebars (homepage) on load.
 router.get('/', function (req, res) {
     burger.selectAll(function (data) {
+        console.log(data);
         const hbsObject = {
             burgers: data
         };
