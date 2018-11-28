@@ -58,9 +58,9 @@ That is really all there is to starting the application running, after that it i
 
 ## Deployment
 
-* [Deployed Site](https://.com/)
+* [Deployed Site](https://burger-simple.herokuapp.com/)
 
-Notes to come...
+I personally have this application deployed using Heroku, with the JawsDB serving to link my database to the application.  More notes and info on this to come...
 
 ## Built With
 
